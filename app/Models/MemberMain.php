@@ -26,4 +26,20 @@ class MemberMain extends Model
         'level_id' => 'integer',
         'depo_l ' => 'double',
     ];
+
+    // relationship
+    public function memberDets()
+    {
+        return $this->hasMany(MemberDet::class, 'member_main_id');
+    }
+
+    public function memberApis()
+    {
+        return $this->hasMany(MemberApi::class, 'member_main_id');
+    }
+
+    public function memberAccountings()
+    {
+        return $this->hasMany(MemberAccounting::class, 'member_main_id');
+    }
 }
